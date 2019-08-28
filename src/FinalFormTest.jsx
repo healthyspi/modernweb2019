@@ -10,7 +10,7 @@ import Label from './components/Label';
 
 const required = value => (value ? undefined : 'Required field.')
 
-const FinalFormTest = ({ fieldCount = 0, onSubmit }) => {
+const FinalFormTest = ({ fieldCount = 0, onSubmit, subscription }) => {
     const refCount = React.useRef(0);
     const keys = [...Array(fieldCount).keys()]
         .map(n => n + 1);
@@ -19,6 +19,7 @@ const FinalFormTest = ({ fieldCount = 0, onSubmit }) => {
         <Container fluid style={{ padding: '1rem 1.5rem' }}>
             <Form
                 onSubmit={onSubmit}
+                subscription={subscription}
                 render={({ handleSubmit, form, values }) => {
                     return (
                         <Row>
