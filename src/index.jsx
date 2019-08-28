@@ -11,6 +11,7 @@ const App = () => {
         <FinalFormTest
             fieldCount={1000}
             onSubmit={handleSubmit}
+            subscription={{ submitting: true, pristine: true }}
         />
     );
 };
